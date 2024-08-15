@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        body{
+              background-image: url(assets/bg.jpg);
+              background-repeat: no-repeat;
+              background-size: cover;
+              height: 80vh;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <h1>CALCULATOR</h1>
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="result" placeholder="Result"></td>
+                <td><input type="button" value="C" style="background: radial-gradient(rgb(28, 102, 128),rgb(41, 123, 166),rgb(35, 89, 134)); " onclick="clearScreen()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="addToScreen('1')"></td>
+                <td><input type="button" value="2" onclick="addToScreen('2')"></td>
+                <td><input type="button" value="3" onclick="addToScreen('3')"></td>
+                <td><input type="button" value="+" onclick="addToScreen('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="addToScreen('4')"></td>
+                <td><input type="button" value="5" onclick="addToScreen('5')"></td>
+                <td><input type="button" value="6" onclick="addToScreen('6')"></td>
+                <td><input type="button" value="-" onclick="addToScreen('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="addToScreen('7')"></td>
+                <td><input type="button" value="8" onclick="addToScreen('8')"></td>
+                <td><input type="button" value="9" onclick="addToScreen('9')"></td>
+                <td><input type="button" value="x" onclick="addToScreen('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" onclick="addToScreen('/')"></td>
+                <td><input type="button" value="0" onclick="addToScreen('0')"></td>
+                <td><input type="button" value="." onclick="addToScreen('.')"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+    
+        function addToScreen(value) {
+            document.getElementById("result").value += value;
+        }
+    
+        function calculate() {
+            document.getElementById("result").value = eval(document.getElementById("result").value);
+        }
+    </script>
+    
+        
+</body>
+</html>
